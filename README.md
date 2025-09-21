@@ -293,12 +293,6 @@ Les contributions sont les bienvenues ! Pour contribuer :
 4. Push vers la branche (`git push origin feature/AmazingFeature`)
 5. Ouvrir une Pull Request
 
-## 📞 **Contact**
-
-- **Projet** : SkillForge
-- **Auteur** : Votre nom
-- **Email** : votre.email@exemple.com
-- **LinkedIn** : [Votre profil LinkedIn]
 
 ---
 
