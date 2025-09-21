@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillForge - Recommandations de Formations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-graduation-cap"></i> SkillForge</h1>
+                <p>Système de Recommandation de Formations par IA</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="search-section">
+                <div class="search-card">
+                    <h2><i class="fas fa-search"></i> Rechercher des Recommandations</h2>
+                    <form id="searchForm" class="search-form">
+                        <div class="input-group">
+                            <label for="memberId">ID du Membre :</label>
+                            <input type="number" id="memberId" name="memberId" placeholder="Ex: 4748" required>
+                            <button type="submit" class="btn-primary">
+                                <i class="fas fa-search"></i> Rechercher
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-card">
+                    <h3><i class="fas fa-user"></i> Résultats pour le Membre <span id="memberIdResult"></span></h3>
+                    <div id="formationsResult" class="formations-list"></div>
+                </div>
+            </div>
+
+            <div class="error-section" id="errorSection" style="display: none;">
+                <div class="error-card">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Erreur</h3>
+                    <p id="errorMessage"></p>
+                </div>
+            </div>
+
+            <div class="examples-section">
+                <div class="examples-card">
+                    <h3><i class="fas fa-lightbulb"></i> Exemples d'IDs à tester</h3>
+                    <div class="examples-grid">
+                        <button class="example-btn" onclick="searchMember(4748)">4748</button>
+                        <button class="example-btn" onclick="searchMember(1200)">1200</button>
+                        <button class="example-btn" onclick="searchMember(372)">372</button>
+                        <button class="example-btn" onclick="searchMember(80)">80</button>
+                        <button class="example-btn" onclick="searchMember(890)">890</button>
+                        <button class="example-btn" onclick="searchMember(1039)">1039</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="api-section">
+                <div class="api-card">
+                    <h3><i class="fas fa-code"></i> API Endpoints</h3>
+                    <div class="api-endpoints">
+                        <div class="endpoint">
+                            <span class="method get">GET</span>
+                            <code>/health</code>
+                            <span class="description">Statut de l'API</span>
+                        </div>
+                        <div class="endpoint">
+                            <span class="method get">GET</span>
+                            <code>/recommendations/{id}</code>
+                            <span class="description">Recommandations par ID</span>
+                        </div>
+                        <div class="endpoint">
+                            <span class="method post">POST</span>
+                            <code>/predict_formations</code>
+                            <span class="description">Prédiction via JSON</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 SkillForge - Système de Recommandation IA</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
